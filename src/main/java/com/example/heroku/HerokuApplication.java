@@ -53,12 +53,12 @@ public class HerokuApplication {
     SpringApplication.run(HerokuApplication.class, args);
   }
 
-  @RequestMapping("/")
+  @RequestMapping(value={"/"})
   String index() {
     return "index";
   }
 
-  @RequestMapping("/hello")
+  @RequestMapping(value={"/hello"})
   String hello(Map<String, Object> model) {
     RelativisticModel.select();
     Amount<Mass> m = Amount.valueOf("12 GeV").to(KILOGRAM);
